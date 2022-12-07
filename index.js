@@ -35,14 +35,14 @@ const reset = () => {
 const addPerson = (user) => {
     return {
         type: ADD_PERSION,
-        payload: {user},
+        payload: user,
     }
 }
 
 //it's my reducer function 
 const counterReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INCREMENT:
+        case increment():
             return{
                 ...state,
                 count: state.count + 1,
@@ -58,6 +58,11 @@ const counterReducer = (state = initialState, action) => {
             return{
                 ...state,
                 count: 0,
+            }
+        
+        case ADD_PERSION:
+            return{
+                ...state,
             }
 
         default:
