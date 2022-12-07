@@ -1,4 +1,5 @@
-const { createStore } = require("redux");
+import { createStore } from "redux"
+import {INCREMENT, DECREMENT, RESET, ADD_PERSION, COUNT_USER} from "./action_type/type.js"
 
 
 
@@ -42,11 +43,47 @@ const countUser = () =>{
     }
 }
 
+//it's my reducer function 
+const counterReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + 1,
+            }
 
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count - 1,
+            }
+
+        case RESET:
+            return {
+                ...state,
+                count: 0,
+            }
+        
+        case ADD_PERSION:
+            return {
+                ...state,
+                person: [...state.user, action.payload],
+            }
+
+        case COUNT_USER:
+            return {
+                ...state,
+                totalUser: state.user.length,
+            }
+
+        default:
+            return state;
+    }
+}
 
 
 //it's my application store...
-const store = createStore(counterReducer);
+const store = createStore(counterReducer)
 
 store.subscribe(() => {
     console.log(store.getState());
@@ -62,3 +99,4 @@ store.dispatch(reset());
 store.dispatch(addUser({id: 2, name: 'Aayan', address: 'mohammodpur'}));
 store.dispatch(addUser({id: 3, name: 'Tamim', address: 'Dhanmondi'}));
 store.dispatch(countUser());
+
