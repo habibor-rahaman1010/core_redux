@@ -39,7 +39,7 @@ const addPerson = (user) => {
     }
 }
 
-//it's my reduser function 
+//it's my reducer function 
 const counterReducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT:
