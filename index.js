@@ -4,12 +4,12 @@ const { createStore } = require("redux");
 const INCREMENT = 'INCREMENT';
 const DECREMENT = "DECREMENT";
 const RESET = 'RESET'
-const ADD_PERSION = 'ADD_PERSION';
+const ADD_PERSION = 'ADD_USER';
 
 //initial state...
 const initialState = {
     count: 0,
-    person:[
+    user:[
         {id: 1, name: 'habibor', address: 'dhaka'}
     ]
 } 
@@ -32,7 +32,7 @@ const reset = () => {
     }
 }
 
-const addPerson = (user) => {
+const addUser = (user) => {
     return {
         type: ADD_PERSION,
         payload: user,
@@ -63,7 +63,7 @@ const counterReducer = (state = initialState, action) => {
         case ADD_PERSION:
             return{
                 ...state,
-                person: [...state.person, action.payload],
+                person: [...state.user, action.payload],
             }
 
         default:
