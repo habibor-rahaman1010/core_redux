@@ -54,11 +54,11 @@ const counterReducer = (state = initialState, action) => {
                 count: state.count - 1,
             }
 
-            case RESET:
-                return{
-                    ...state,
-                    count: 0,
-                }
+        case RESET:
+            return{
+                ...state,
+                count: 0,
+            }
 
         default:
             return state;
