@@ -1,11 +1,6 @@
 const { createStore } = require("redux");
 
-//constant type...
-const INCREMENT = 'INCREMENT';
-const DECREMENT = "DECREMENT";
-const RESET = 'RESET'
-const ADD_PERSION = 'ADD_USER';
-const COUNT_USER = 'COUNT_USER'
+
 
 //initial state...
 const initialState = {
@@ -47,43 +42,7 @@ const countUser = () =>{
     }
 }
 
-//it's my reducer function 
-const counterReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case INCREMENT:
-            return {
-                ...state,
-                count: state.count + 1,
-            }
 
-        case DECREMENT:
-            return {
-                ...state,
-                count: state.count - 1,
-            }
-
-        case RESET:
-            return {
-                ...state,
-                count: 0,
-            }
-        
-        case ADD_PERSION:
-            return {
-                ...state,
-                user: [...state.user, action.payload],
-            }
-
-        case COUNT_USER:
-            return {
-                ...state,
-                totalUser: state.user.length,
-            }
-
-        default:
-            return state;
-    }
-}
 
 
 //it's my application store...
