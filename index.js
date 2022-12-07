@@ -1,5 +1,6 @@
 //constant type...
 const INCREMENT = 'INCREMENT';
+const DECREMENT = "DECREMENT";
 const ADD_PERSION = 'ADD_PERSION';
 
 //initial state...
@@ -10,3 +11,14 @@ const counterState = {
     ]
 } 
 
+const increment = () => {
+    return{
+        type:INCREMENT,
+    }
+}
+
+const decrement = () => {
+    return {
+        type: 
+    }
+}
