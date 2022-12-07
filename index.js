@@ -77,7 +77,7 @@ const counterReducer = (state = initialState, action) => {
         case COUNT_USER:
             return {
                 ...state,
-                totalUser: state.user.length;
+                totalUser: state.user.length,
             }
 
         default:
@@ -101,4 +101,5 @@ store.dispatch(increment());
 store.dispatch(decrement());
 store.dispatch(reset());
 store.dispatch(addUser({id: 2, name: 'Aayan', address: 'mohammodpur'}));
+store.dispatch(countUser());
 
