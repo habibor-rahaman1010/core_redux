@@ -6,7 +6,7 @@ const DECREMENT = "DECREMENT";
 const ADD_PERSION = 'ADD_PERSION';
 
 //initial state...
-const counterState = {
+const initialState = {
     count: 0,
     person:[
         {id: 1, name: 'habibor', address: 'dhaka'}
@@ -33,7 +33,7 @@ const addPerson = (user) => {
 }
 
 //it's my reduser function 
-const counterReducer = (state = counterState, action) => {
+const counterReducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT:
             return{
@@ -52,6 +52,12 @@ const counterReducer = (state = counterState, action) => {
 }
 
 
+//it's my application store...
 const store = createStore(counterReducer);
 
-store.subscribe();
+store.subscribe(() => {
+    console.log(store.getState());
+});
+
+//dispatch action...
+store.dispatch(increment())
