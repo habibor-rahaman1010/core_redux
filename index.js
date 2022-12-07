@@ -42,7 +42,7 @@ const addPerson = (user) => {
 //it's my reducer function 
 const counterReducer = (state = initialState, action) => {
     switch (action.type) {
-        case increment():
+        case INCREMENT:
             return{
                 ...state,
                 count: state.count + 1,
@@ -63,6 +63,7 @@ const counterReducer = (state = initialState, action) => {
         case ADD_PERSION:
             return{
                 ...state,
+                person: [...state.person, action.payload],
             }
 
         default:
@@ -85,4 +86,5 @@ store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(decrement());
 store.dispatch(reset());
+store.dispatch(addPerson({id: 2, name: 'Aayan', address: 'mohammodpur'}));
 
