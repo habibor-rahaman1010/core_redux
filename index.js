@@ -86,5 +86,5 @@ store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(decrement());
 store.dispatch(reset());
-store.dispatch(addPerson({id: 2, name: 'Aayan', address: 'mohammodpur'}));
+store.dispatch(addUser({id: 2, name: 'Aayan', address: 'mohammodpur'}));
 
