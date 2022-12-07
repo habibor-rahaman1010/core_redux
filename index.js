@@ -19,6 +19,14 @@ const increment = () => {
 
 const decrement = () => {
     return {
-        type: 
+        type: DECREMENT,
     }
 }
+
+const addPerson = (user) => {
+    return {
+        type: ADD_PERSION,
+        payload: {user},
+    }
+}
+console.log("Hello");
