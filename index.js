@@ -71,7 +71,7 @@ const counterReducer = (state = initialState, action) => {
         case ADD_PERSION:
             return {
                 ...state,
-                person: [...state.user, action.payload],
+                user: [...state.user, action.payload],
             }
 
         case COUNT_USER:
@@ -101,5 +101,6 @@ store.dispatch(increment());
 store.dispatch(decrement());
 store.dispatch(reset());
 store.dispatch(addUser({id: 2, name: 'Aayan', address: 'mohammodpur'}));
+
 store.dispatch(countUser());
 
