@@ -1,7 +1,12 @@
-import { createStore } from "redux"
-import {INCREMENT, DECREMENT, RESET, ADD_PERSION, COUNT_USER} from "./action_type/type.js"
+const { createStore } = require("redux");
 
 
+//constant type...
+const INCREMENT = 'INCREMENT';
+const DECREMENT = "DECREMENT";
+const RESET = 'RESET'
+const ADD_PERSION = 'ADD_USER';
+const COUNT_USER = 'COUNT_USER'
 
 //initial state...
 const initialState = {
@@ -12,7 +17,36 @@ const initialState = {
     totalUser: 1,
 } 
 
+const increment = () => {
+    return{
+        type:INCREMENT,
+    }
+}
 
+const decrement = () => {
+    return {
+        type: DECREMENT,
+    }
+}
+
+const reset = () => {
+    return {
+        type: RESET,
+    }
+}
+
+const addUser = (user) => {
+    return {
+        type: ADD_PERSION,
+        payload: user,
+    }
+}
+
+const countUser = () =>{
+    return {
+        type: COUNT_USER,
+    }
+}
 
 //it's my reducer function 
 const counterReducer = (state = initialState, action) => {
@@ -54,7 +88,7 @@ const counterReducer = (state = initialState, action) => {
 
 
 //it's my application store...
-const store = createStore(counterReducer)
+const store = createStore(counterReducer);
 
 store.subscribe(() => {
     console.log(store.getState());
