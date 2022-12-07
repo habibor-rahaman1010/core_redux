@@ -41,7 +41,7 @@ const counterReducer = (state = initialState, action) => {
                 count: state.count + 1,
             }
 
-        case INCREMENT:
+        case DECREMENT:
             return{
                 ...state,
                 count: state.count - 1,
@@ -64,3 +64,5 @@ store.subscribe(() => {
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(increment());
+store.dispatch(decrement());
+
