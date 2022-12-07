@@ -55,7 +55,7 @@ const counterReducer = (state = initialState, action) => {
 //it's my application store...
 const store = createStore(counterReducer);
 
-store.subcribe(() => {
+store.subscribe(() => {
     console.log(store.getState());
 });
 
