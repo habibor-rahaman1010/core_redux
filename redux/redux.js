@@ -101,5 +101,6 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 
+
+store.dispatch(addProduct({id: 2, name: "apple macbook pro", brand: "apple", quantity: 3, price: 180000, reting: 4.9, status: true}));
 store.dispatch(getProduct());
-store.dispatch(addProduct({id: 2, name: "apple macbook pro", brand: "apple", quantity: 3, price: 180000, reting: 4.9, status: true}))
