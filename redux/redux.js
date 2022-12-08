@@ -18,8 +18,8 @@ const initialSatate = {
         status: true,
     }],
     totalProduct: 1,
-    availableProduct: 0,
-    bestSeller: 0,
+    availableProduct: [],
+    bestSeller: [],
 }
 
 //action creator...
@@ -36,36 +36,51 @@ const addProduct = (product) => {
     }
 }
 
-const totoalProduct = () => {
+const getTotoalProduct = () => {
     return {
         type: TOTAL_PRODUCT,
     }
 }
 
-const availableProduct  = () => {
+const getAvailableProduct  = () => {
     return {
         type: AVAILABLE_PRODUCT,
     }
 }
 
-const bestSeller = () => {
+const getBestSeller = () => {
     return {
         type: AVAILABLE_PRODUCT,
     }
 }
-console.log(initialSatate);
 
 // it's my reducer funtion...
 
 const reducer = function productReducer(state = initialSatate, action){
     switch (action.type) {
         case GET_PRODUCT:
-           
+            return {
+                ...state
+            }
+
+        case ADD_PRODUCT:
+            return {
+                ...state,
+                product: [...state.product, action.payload]
+            }
+        case TOTAL_PRODUCT:
+            return {
+                ...state,
+                totalProduct: state.product.length,
+            }
+
+        case AVAILABLE_PRODUCT:
+            
             return {
                 
             }
     
-    default:
-        break;
-    }
+        default:
+            return state;
+        }
 }
