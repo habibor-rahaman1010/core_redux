@@ -17,7 +17,7 @@ const initialSatate = {
         quantity: 1,
         price: 56000,
         reting: 4.5,
-        status: true,
+        status: true
     }],
     totalProduct: 1,
     availableProduct: [],
@@ -102,3 +102,11 @@ store.subscribe(() => {
 });
 
 store.dispatch(getProduct());
+store.dispatch(addProduct({
+    id: 1,
+    name: "Hp eleitbook Laptop",
+    brand: "Hp",
+    quantity: 1,
+    price: 56000,
+    reting: 4.5,
+    status: true}))
