@@ -99,4 +99,6 @@ const reducer = function productReducer(state = initialSatate, action){
 const store = createStore(reducer);
 store.subscribe(() => {
     console.log(getSate());
-})
+});
+
+store.dispatch(getProduct());
