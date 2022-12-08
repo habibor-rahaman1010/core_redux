@@ -17,7 +17,7 @@ const initialSatate = {
         quantity: 1,
         price: 56000,
         reting: 4.5,
-        status: true
+        status: false
     }],
     totalProduct: 1,
     availableProduct: [],
@@ -81,7 +81,7 @@ const reducer = function productReducer(state = initialSatate, action){
             const avilable = state.product.filter((p) => p.status === true);
             return {
                 ...state,
-                availableProduct: [...state.availableProduct, avilable],
+                availableProduct: [...state.availableProduct, ...[...avilable]],
             }
 
         case BEST_SELLER:
@@ -106,3 +106,4 @@ store.dispatch(getProduct());
 store.dispatch(addProduct({id: 2, name: "apple macbook pro", brand: "apple", quantity: 3, price: 180000, reting: 4.9, status: true}));
 store.dispatch(getTotoalProduct());
 store.dispatch(getAvailableProduct());
+store.dispatch(getBestSeller());
