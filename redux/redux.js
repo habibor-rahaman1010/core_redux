@@ -21,3 +21,17 @@ const initialSatate = {
     availableProduct: 0,
     bestSeller: 0,
 }
+
+//action creator...
+const getProduct = () => {
+    return {
+        type: GET_PRODUCT,
+    }
+}
+
+const addProduct = (product) => {
+    return {
+        type: ADD_PRODUCT,
+        payload: product,
+    }
+}
