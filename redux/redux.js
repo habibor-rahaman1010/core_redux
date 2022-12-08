@@ -98,7 +98,7 @@ const reducer = function productReducer(state = initialSatate, action){
 // it's my redux application store...
 const store = createStore(reducer);
 store.subscribe(() => {
-    console.log(getSate());
+    console.log(store.getState());
 });
 
 store.dispatch(getProduct());
