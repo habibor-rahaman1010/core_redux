@@ -56,7 +56,6 @@ const getBestSeller = () => {
     }
 }
 
-
 // it's my reducer funtion...
 
 const reducer = function productReducer(state = initialSatate, action){
@@ -78,6 +77,7 @@ const reducer = function productReducer(state = initialSatate, action){
             }
 
         case AVAILABLE_PRODUCT:
+
             const avilable = state.product.filter((p) => p.status === true);
             return {
                 ...state,
@@ -98,6 +98,7 @@ const reducer = function productReducer(state = initialSatate, action){
 
 // it's my redux application store...
 const store = createStore(reducer);
+
 store.subscribe(() => {
     console.log(store.getState());
 });
