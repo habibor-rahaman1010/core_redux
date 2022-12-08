@@ -1,3 +1,5 @@
+const { createStore } = require("redux");
+
 //constant variable my project...
 const GET_PRODUCT = "GET_PRODUCT";
 const ADD_PRODUCT = "ADD_PRODUCT";
@@ -92,3 +94,9 @@ const reducer = function productReducer(state = initialSatate, action){
             return state;
         }
 }
+
+// it's my redux application store...
+const store = createStore(reducer);
+store.subscribe(() => {
+    console.log(getSate());
+})
