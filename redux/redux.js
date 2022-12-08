@@ -53,7 +53,8 @@ const getBestSeller = () => {
         type: AVAILABLE_PRODUCT,
     }
 }
-
+const best = initialSatate.product.filter((p) => p.reting >= 3.5);
+console.log(best);
 // it's my reducer funtion...
 
 const reducer = function productReducer(state = initialSatate, action){
@@ -75,9 +76,17 @@ const reducer = function productReducer(state = initialSatate, action){
             }
 
         case AVAILABLE_PRODUCT:
-            
+            const avilable = state.product.filter((p) => p.status === true);
             return {
-                
+                ...state,
+                availableProduct: [...state.availableProduct, avilable],
+            }
+
+        case BEST_SELLER:
+            const best = state.product.filter((p) => p.reting >= 3.5);
+            return {
+                ...state,
+                bestSeller: [...state.bestSeller, best],
             }
     
         default:
