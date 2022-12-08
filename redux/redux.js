@@ -35,3 +35,21 @@ const addProduct = (product) => {
         payload: product,
     }
 }
+
+const totoalProduct = () => {
+    return {
+        type: TOTAL_PRODUCT,
+    }
+}
+
+const availableProduct  = () => {
+    return {
+        type: AVAILABLE_PRODUCT,
+    }
+}
+
+const bestSeller = () => {
+    return {
+        type: AVAILABLE_PRODUCT,
+    }
+}
