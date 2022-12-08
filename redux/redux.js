@@ -16,7 +16,7 @@ const initialSatate = {
         brand: "Hp",
         quantity: 1,
         price: 56000,
-        reting: 4.5,
+        reting: 4.2,
         status: false
     }],
     totalProduct: 1,
@@ -52,12 +52,12 @@ const getAvailableProduct  = () => {
 
 const getBestSeller = () => {
     return {
-        type: AVAILABLE_PRODUCT,
+        type: BEST_SELLER,
     }
 }
 
-// it's my reducer funtion...
 
+// it's my reducer funtion...
 const reducer = function productReducer(state = initialSatate, action){
     switch (action.type) {
         case GET_PRODUCT:
@@ -88,7 +88,7 @@ const reducer = function productReducer(state = initialSatate, action){
             const best = state.product.filter((p) => p.reting >= 3.5);
             return {
                 ...state,
-                bestSeller: [...state.bestSeller, best],
+                bestSeller: [...state.bestSeller, ...[...best]],
             }
     
         default:
@@ -103,8 +103,11 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 
+// action dispatch 
 store.dispatch(getProduct());
-store.dispatch(addProduct({id: 2, name: "apple macbook pro", brand: "apple", quantity: 3, price: 180000, reting: 4.9, status: true}));
+store.dispatch(addProduct({id: 2, name: "apple macbook pro", brand: "apple", quantity: 3, price: 180000, reting: 4.8, status: true}));
+store.dispatch(addProduct({id: 2, name: "asus zenbook pro", brand: "asus", quantity: 2, price: 120000, reting: 3.8, status: false}));
+store.dispatch(addProduct({id: 2, name: "lenevo spiral 2x", brand: "lenevo", quantity: 6, price: 85000, reting: 3.4, status: true}));
 store.dispatch(getTotoalProduct());
 store.dispatch(getAvailableProduct());
 store.dispatch(getBestSeller());
