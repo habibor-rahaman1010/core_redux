@@ -105,9 +105,17 @@ store.subscribe(() => {
 
 // action dispatch 
 store.dispatch(getProduct());
+
 store.dispatch(addProduct({id: 2, name: "apple macbook pro", brand: "apple", quantity: 3, price: 180000, reting: 4.8, status: true}));
+
 store.dispatch(addProduct({id: 2, name: "asus zenbook pro", brand: "asus", quantity: 2, price: 120000, reting: 3.8, status: false}));
+
 store.dispatch(addProduct({id: 2, name: "lenevo spiral 2x", brand: "lenevo", quantity: 6, price: 85000, reting: 3.4, status: true}));
+
+store.dispatch(addProduct({id: 2, name: "dell spiral 4x", brand: "dell", quantity: 2, price: 85000, reting: 4.1, status: true}));
+
 store.dispatch(getTotoalProduct());
+
 store.dispatch(getAvailableProduct());
+
 store.dispatch(getBestSeller());
