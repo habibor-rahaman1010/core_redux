@@ -53,3 +53,16 @@ const bestSeller = () => {
         type: AVAILABLE_PRODUCT,
     }
 }
+
+// it's my reducer funtion...
+
+const reducer = function productReducer(state = initialSatate, action){
+    switch (action.type) {
+        case value:
+            
+            break;
+    
+    default:
+        break;
+    }
+}
