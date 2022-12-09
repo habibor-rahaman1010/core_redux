@@ -1,6 +1,6 @@
 // here multiple reducer function used...
 
-const { createStore } = require("redux");
+const { createStore, combineReducers } = require("redux");
 
 //constant variable my project...
 const GET_PRODUCT = "GET_PRODUCT";
@@ -215,3 +215,13 @@ store.dispatch(getTotoalProduct());
 store.dispatch(getAvailableProduct());
 
 store.dispatch(getBestSeller());
+
+//
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(decrement());
+store.dispatch(reset());
+store.dispatch(addUser({id: 2, name: 'Aayan', address: 'mohammodpur'}));
+store.dispatch(addUser({id: 3, name: 'Tamim', address: 'Dhanmondi'}));
+store.dispatch(countUser());
