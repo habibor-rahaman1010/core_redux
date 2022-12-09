@@ -9,8 +9,12 @@ const TOTAL_PRODUCT = "TOTAL_PRODUCT";
 const AVAILABLE_PRODUCT = "AVAILABLE_PRODUCT";
 const BEST_SELLER = "BEST_SELLER";
 
-// card constat variable
-const GET_CARD = "GET_CARD"
+//user constant type...
+const INCREMENT = 'INCREMENT';
+const DECREMENT = "DECREMENT";
+const RESET = 'RESET'
+const ADD_PERSION = 'ADD_USER';
+const COUNT_USER = 'COUNT_USER'
 
 
 // initial state of project...
@@ -28,6 +32,15 @@ const initialSatate = {
     availableProduct: [],
     bestSeller: [],
 }
+
+//user initial state...
+const initialState = {
+    count: 0,
+    user:[
+        {id: 1, name: 'habibor', address: 'dhaka'}
+    ],
+    totalUser: 1,
+} 
 
 //action creator...
 const getProduct = () => {
@@ -58,6 +71,38 @@ const getAvailableProduct  = () => {
 const getBestSeller = () => {
     return {
         type: BEST_SELLER,
+    }
+}
+
+//user action creator...
+const increment = () => {
+    return{
+        type:INCREMENT,
+    }
+}
+
+const decrement = () => {
+    return {
+        type: DECREMENT,
+    }
+}
+
+const reset = () => {
+    return {
+        type: RESET,
+    }
+}
+
+const addUser = (user) => {
+    return {
+        type: ADD_PERSION,
+        payload: user,
+    }
+}
+
+const countUser = () =>{
+    return {
+        type: COUNT_USER,
     }
 }
 
@@ -100,6 +145,46 @@ const reducer = function productReducer(state = initialSatate, action){
             return state;
         }
 }
+
+
+//it's my user reducer function 
+const counterReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + 1,
+            }
+
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count - 1,
+            }
+
+        case RESET:
+            return {
+                ...state,
+                count: 0,
+            }
+        
+        case ADD_PERSION:
+            return {
+                ...state,
+                user: [...state.user, action.payload],
+            }
+
+        case COUNT_USER:
+            return {
+                ...state,
+                totalUser: state.user.length,
+            }
+
+        default:
+            return state;
+    }
+}
+
 
 
 
