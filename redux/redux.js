@@ -1,3 +1,5 @@
+// here multiple reducer function used...
+
 const { createStore } = require("redux");
 
 //constant variable my project...
@@ -6,6 +8,9 @@ const ADD_PRODUCT = "ADD_PRODUCT";
 const TOTAL_PRODUCT = "TOTAL_PRODUCT";
 const AVAILABLE_PRODUCT = "AVAILABLE_PRODUCT";
 const BEST_SELLER = "BEST_SELLER";
+
+// card constat variable
+const GET_CARD = "GET_CARD"
 
 
 // initial state of project...
@@ -95,6 +100,8 @@ const reducer = function productReducer(state = initialSatate, action){
             return state;
         }
 }
+
+
 
 // it's my redux application store...
 const store = createStore(reducer);
