@@ -18,7 +18,7 @@ const COUNT_USER = 'COUNT_USER'
 
 
 // initial state of project...
-const initialSatate = {
+const initialState1 = {
     product:[{
         id: 1,
         name: "Hp eleitbook Laptop",
@@ -34,7 +34,7 @@ const initialSatate = {
 }
 
 //user initial state...
-const initialState = {
+const initialState2 = {
     count: 0,
     user:[
         {id: 1, name: 'habibor', address: 'dhaka'}
@@ -108,7 +108,7 @@ const countUser = () =>{
 
 
 // it's my reducer funtion...
-const reducer1 = function productReducer(state = initialSatate, action){
+const reducer1 = function productReducer(state = initialState1, action){
     switch (action.type) {
         case GET_PRODUCT:
             return {
@@ -148,7 +148,7 @@ const reducer1 = function productReducer(state = initialSatate, action){
 
 
 //it's my user reducer function 
-const reducer2 = function counterReducer(state = initialState, action) {
+const reducer2 = function counterReducer(state = initialState2, action) {
     switch (action.type) {
         case INCREMENT:
             return {
@@ -215,6 +215,7 @@ store.dispatch(getTotoalProduct());
 store.dispatch(getAvailableProduct());
 
 store.dispatch(getBestSeller());
+
 
 //
 store.dispatch(increment());
